@@ -1,6 +1,6 @@
 body {
     font-family: Lucida Sans Regular, Arial, sans-serif;
-    font-size: 1.5em;
+    font-size: 1em;
     text-align: center;
     background-color: rgb(212, 216, 214);
     color: rgb(3, 41, 22);
@@ -15,6 +15,13 @@ body {
     "footer";
 }
 
+h1, h2 {
+    font-size: 1.5em;
+    font-style: italic;
+    color: rgb(3, 41, 22);
+    text-align: center;
+}
+
 /* Header */
 header {
     border-radius: 25px;
@@ -23,7 +30,7 @@ header {
     display: grid;
     width: 100%;
     grid-area: header;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: auto auto;
     grid-gap: 20px;
     grid-template-areas:
         "brand brand"
@@ -45,6 +52,15 @@ header .tools {
     justify-self: center;
 }
 
+.tools input[type=text] {
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    font-size: 0.5em;
+    justify-content: center;
+    align-self: center;
+}
+
 .brand, .glob-nav, .tools {
     border-radius: 25px;
     border: 2px solid #000000;
@@ -55,7 +71,7 @@ header .tools {
 .hero {
     display: grid;
     grid-area: hero;
-    grid-template-columns: 1fr;
+    grid-template-columns: auto;
     grid-gap: 20px;
     grid-template-areas:
         "hero-feature"
@@ -81,7 +97,7 @@ header .tools {
 .focus {
     display: grid;
     grid-area: focus;
-    grid-template-columns: 1fr;
+    grid-template-columns: auto;
     grid-gap: 20px;
     grid-template-areas: 
         "article-feature"
@@ -100,6 +116,7 @@ header .tools {
 }
 
 .focus .article-listing {
+    text-align: justify;
     grid-area: article-listing;
     padding: 20px;
 }
@@ -125,6 +142,8 @@ footer {
     border-radius: 25px;
     border: 2px solid #000000;
     grid-area: desktop-ad;
+    justify-content: center;
+    align-content: center;
 }
 
 /* Sidebar */
@@ -155,13 +174,14 @@ footer {
 
     /* Change header */
     header {
-        grid-template-columns: 1fr 2.5fr 1fr;
+        grid-template-columns: auto auto auto;
         grid-template-areas:
         "brand glob-nav tools";
     }
     header .glob-nav {
         grid-area: glob-nav;
-        justify-self: center;
+        justify-content: center;
+        align-self: center;
     }
 
     /* Change hero */
@@ -193,8 +213,8 @@ footer {
 /* Desktop layout */
 @media (min-width: 992px) {
     body {
-        grid-template-columns: 2fr 3fr 1fr;
-        grid-template-rows: 2fr 2fr 6fr 2fr;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: 2fr 2fr auto 2fr;
         grid-template-areas:
             "header header header"
             "hero hero desktop-ad"
@@ -214,7 +234,7 @@ footer {
 
     /* Change hero */
     .hero {
-        grid-template-columns: 2fr 1fr;
+        grid-template-columns: 4fr 2fr;
         grid-template-areas:
         "hero-feature hero-action";
     }
@@ -225,8 +245,8 @@ footer {
 
     /* Change focus */
     .focus {
-        grid-template-columns: 2fr 4fr;
-        grid-template-rows: 6fr;
+        grid-template-columns: 1.5fr 4.5fr;
+        grid-template-rows: auto;
         grid-template-areas:
         "article-feature article-listing";
     }
