@@ -1,0 +1,238 @@
+body {
+    font-family: Lucida Sans Regular, Arial, sans-serif;
+    font-size: 1.5em;
+    text-align: center;
+    background-color: rgb(212, 216, 214);
+    color: rgb(3, 41, 22);
+    margin: 20px;
+    display: grid;
+    grid-gap: 20px;
+
+    grid-template-areas:
+    "header"
+    "hero"
+    "focus"
+    "footer";
+}
+
+/* Header */
+header {
+    border-radius: 25px;
+    border: 2px solid #000000;
+    background-color: rgb(122, 165, 144);
+    display: grid;
+    width: 100%;
+    grid-area: header;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    grid-template-areas:
+        "brand brand"
+        "glob-nav tools";
+}
+
+header .brand {
+    grid-area: brand;
+    justify-self: center;
+}
+
+header .glob-nav {
+    grid-area: glob-nav;
+    justify-self: center;
+}
+
+header .tools {
+    grid-area: tools;
+    justify-self: center;
+}
+
+.brand, .glob-nav, .tools {
+    border-radius: 25px;
+    border: 2px solid #000000;
+    padding: 20px;
+}
+
+/* Hero */
+.hero {
+    display: grid;
+    grid-area: hero;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    grid-template-areas:
+        "hero-feature"
+        "hero-action";
+}
+
+.hero .hero-feature {
+    grid-area: hero-feature;
+    padding: 20px;
+}
+
+.hero .hero-action {
+    grid-area: hero-action;
+    padding: 20px;
+}
+
+.hero .hero-feature, .hero .hero-action {
+    border-radius: 25px;
+    border: 2px solid #000000;
+}
+
+/* Focus (body) */
+.focus {
+    display: grid;
+    grid-area: focus;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    grid-template-areas: 
+        "article-feature"
+        "mobile-ad"
+        "article-listing";
+}
+
+.focus .article-feature {
+    grid-area: article-feature;
+    padding: 20px;
+}
+
+.focus .mobile-ad {
+    grid-area: mobile-ad;
+    padding: 20px;
+}
+
+.focus .article-listing {
+    grid-area: article-listing;
+    padding: 20px;
+}
+
+.focus .article-feature, .focus .mobile-ad, .focus .article-listing {
+    border-radius: 25px;
+    border: 2px solid #000000;
+}
+
+/* Footer */
+footer {
+    border-radius: 25px;
+    border: 2px solid #000000;
+    background-color: rgb(122, 165, 144);
+    justify-content: center;
+    display: grid;
+    grid-area: footer;
+    width: 100%;
+}
+
+/* Desktop ad */
+.desktop-ad {
+    border-radius: 25px;
+    border: 2px solid #000000;
+    grid-area: desktop-ad;
+}
+
+/* Sidebar */
+.sidebar {
+    border-radius: 25px;
+    border: 2px solid #000000;
+    grid-area: sidebar;
+}
+.sidebar .sidebar-feature {
+    height: 100%;
+}
+
+/* Hide non-mobile features */
+.hero .hero-feature, .desktop-ad, .sidebar {
+    display: none;
+}
+
+/* Tablet layout */
+@media (min-width: 576px) {
+    body {
+        grid-template-areas:
+        "header"
+        "hero"
+        "focus"
+        "sidebar"
+        "footer";
+    }
+
+    /* Change header */
+    header {
+        grid-template-columns: 1fr 2.5fr 1fr;
+        grid-template-areas:
+        "brand glob-nav tools";
+    }
+    header .glob-nav {
+        grid-area: glob-nav;
+        justify-self: center;
+    }
+
+    /* Change hero */
+    .hero {
+        grid-template-areas:
+        "hero-feature hero-feature hero-feature"
+        "hero-action hero-action hero-action";
+    }
+    .hero .hero-feature {
+        display: block;
+    }
+
+    /* Change focus */
+    .focus {
+        grid-template-rows: 1fr 2.5fr;
+        grid-template-columns: 3fr 1fr;
+        grid-template-areas:
+        "article-feature mobile-ad"
+        "article-listing article-listing";
+    }
+
+    /* Change sidebar */
+    .sidebar {
+        display: grid;
+    }
+
+}
+
+/* Desktop layout */
+@media (min-width: 992px) {
+    body {
+        grid-template-columns: 2fr 3fr 1fr;
+        grid-template-rows: 2fr 2fr 6fr 2fr;
+        grid-template-areas:
+            "header header header"
+            "hero hero desktop-ad"
+            "focus focus sidebar"
+            "footer footer footer";
+    }
+    /* Change header */
+    header {
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-areas:
+        "brand glob-nav tools";
+    }
+    header .glob-nav {
+        grid-area: glob-nav;
+        justify-self: center;
+    }
+
+    /* Change hero */
+    .hero {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas:
+        "hero-feature hero-action";
+    }
+
+    .hero .hero-feature, .desktop-ad, .sidebar {
+    display: block;
+    }
+
+    /* Change focus */
+    .focus {
+        grid-template-columns: 2fr 4fr;
+        grid-template-rows: 6fr;
+        grid-template-areas:
+        "article-feature article-listing";
+    }
+
+    .focus .mobile-ad {
+        display: none;
+    }
+
+}
