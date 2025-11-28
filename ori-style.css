@@ -18,6 +18,12 @@ body {
 h1, h2 {
     font-size: 1.5em;
     font-style: italic;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+h3 {
+    font-size: 1.2em;
+    font-weight: bold;
     color: rgb(3, 41, 22);
     text-align: center;
 }
@@ -25,8 +31,7 @@ h1, h2 {
 /* Header */
 header {
     border-radius: 25px;
-    border: 2px solid #000000;
-    background-color: rgb(122, 165, 144);
+    background-color:  rgb(3, 41, 22);
     display: grid;
     width: 100%;
     grid-area: header;
@@ -41,6 +46,7 @@ header .brand {
     grid-area: brand;
     justify-self: center;
     align-content: center;
+    border-radius: 90px;
 }
 
 header .glob-nav {
@@ -58,15 +64,12 @@ header .tools {
 .tools input[type=text] {
     padding: 6px;
     border: none;
-    margin-top: 8px;
-    font-size: 0.5em;
-    justify-content: center;
-    align-self: center;
+    font-size: 0.6em;
+    justify-self: center;
+    align-content: center;
 }
 
 .brand, .glob-nav, .tools {
-    border-radius: 25px;
-    border: 2px solid #000000;
     padding: 20px;
 }
 
@@ -91,11 +94,12 @@ header .tools {
     align-content: center;
     grid-area: hero-action;
     padding: 20px;
+    background-color:rgb(3, 41, 22);
 }
 
 .hero .hero-feature, .hero .hero-action {
     border-radius: 25px;
-    border: 2px solid #000000;
+    border: 2px solid rgb(3, 41, 22);
 }
 
 /* Focus (body) */
@@ -124,6 +128,9 @@ header .tools {
     transform: scale(1.05);
     box-shadow: 4px 4px 10px rgba(0,0,0,0.5);
 }
+.focus .mobile-ad img {
+    width: fit-content;
+}
 
 .focus .article-listing {
     text-align: justify;
@@ -132,26 +139,24 @@ header .tools {
     padding: 20px;
 }
 
-.focus .article-feature, .focus .mobile-ad, .focus .article-listing {
+.focus .article-feature, .focus .article-listing {
     border-radius: 25px;
-    border: 2px solid #000000;
+    border: 2px solid rgb(3, 41, 22);
 }
 
 /* Footer */
 footer {
     border-radius: 25px;
-    border: 2px solid #000000;
-    background-color: rgb(122, 165, 144);
+    background-color: rgb(3, 41, 22);
+    color: white;
+    padding: 20px;
     justify-content: center;
     display: grid;
     grid-area: footer;
-    width: 100%;
 }
 
 /* Desktop ad */
 .desktop-ad {
-    border-radius: 25px;
-    border: 2px solid #000000;
     grid-area: desktop-ad;
     justify-content: center;
     align-content: center;
@@ -160,10 +165,14 @@ footer {
     transform: scale(1.05);
     box-shadow: 4px 4px 10px rgba(0,0,0,0.5);
 }
+.desktop-ad img {
+    width: fit-content;
+}
 
 /* Sidebar */
 .sidebar {
     border-radius: 25px;
+    padding: 20px;
     border: 2px solid #000000;
     grid-area: sidebar;
 }
@@ -220,6 +229,8 @@ footer {
     /* Change sidebar */
     .sidebar {
         display: grid;
+        justify-content: center;
+        align-content: center;
     }
 
 }
